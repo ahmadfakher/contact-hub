@@ -1,0 +1,609 @@
+/** GENERAL STYLING START */
+
+@font-face {
+    font-family: Inter;
+    src: url("../webfonts/Inter.woff2") format("woff2"),
+        url("../webfonts/Inter.woff") format("woff"),
+        url("../webfonts/Inter.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Inter-500;
+    src: url("../webfonts/Inter18pt-Medium.woff2") format("woff2"),
+        url("../webfonts/Inter18pt-Medium.woff") format("woff"),
+        url("../webfonts/Inter-Medium.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Inter-700;
+    src: url("../webfonts/Inter24pt-bold.woff2") format("woff2"),
+        url("../webfonts/Inter24pt-bold.woff") format("woff"),
+        url("../webfonts/Inter-bold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Inter-900;
+    src: url("../webfonts/Inter18pt-Black.woff2") format("woff2"),
+        url("../webfonts/Inter18pt-Black.woff") format("woff"),
+        url("../webfonts/Inter-Black.ttf") format("ttf");
+}
+
+:root {
+    /* font */
+    --main-font: Inter, sans-serif;
+    --med-font: Inter-500, sans-serif;
+    --bold-font: Inter-700, sans-serif;
+    --bolder-font: Inter-900, sans-serif;
+
+    /* colors */
+    --main-bg: #f8fafc;
+    --a-50: #fffbeb;
+    --a-100: #fef3c6;
+    --a-200-rgb: 254, 230, 133;
+    --a-400: #ffb900;
+    --a-500-rgb: 254, 154, 0;
+    --a-700: #bb4d00;
+    --b-100: #dbeafe;
+    --b-400: #51a2ff;
+    --b-500: #2b7fff;
+    --b-500-rgb: 43, 127, 255;
+    --b-600: #155dfc;
+    --b-700: #1447e6;
+    --c-500: #00b8db;
+    --e-50: #ecfdf5;
+    --e-100: #d0fae5;
+    --e-600: #009966;
+    --g-50: #fbf9fa;
+    --g-50-rgb: 251, 249, 250;
+    --g-100-rgb: 246, 243, 244;
+    --g-100: #f6f3f4;
+    --g-200: #ebe6e7;
+    --g-400: #99a1af;
+    --g-500: #6a7282;
+    --g-700: #364153;
+    --i-50: #eef2ff;
+    --i-600: #4f39f6;
+    --o-50: #fff7ed;
+    --o-500: #ff6900;
+    --p-100: #f3e8ff;
+    --p-700: #8200db;
+    --r-50: #fef2f2;
+    --r-600: #e7000b;
+    --rose-50: #fff1f2;
+    --rose-100: #ffe4e6;
+    --rose-200-rgb: 255, 204, 211;
+    --rose-500: #ff2056;
+    --rose-500-rgb: 255, 32, 86;
+    --rose-600: #ec003f;
+    --v-50: #f5f3ff;
+    --v-100: #ede9fe;
+    --v-500: #8e51ff;
+    --v-500-rgb: 142, 81, 255;
+    --v-600: #7f22fe;
+    --shadow-opacity: #0000001a;
+
+    /* gradient */
+    --br-c500-b600: linear-gradient(to bottom right, var(--c-500), var(--b-600));
+    --r-v600-i600: linear-gradient(to right, var(--v-600), var(--i-600));
+    --br-v600-i600: linear-gradient(to bottom right, var(--v-600), var(--i-600));
+    --br-b500-b600: linear-gradient(to bottom right, var(--b-500), var(--b-600));
+    --br-a400-o500: linear-gradient(to bottom right, var(--a-400), var(--o-500));
+    --br-rose500-r600: linear-gradient(to bottom right, var(--rose-500), var(--r-600));
+    --qucik-card-fav-gradient: linear-gradient(to bottom right, var(--a-50), var(--o-50));
+    --qucik-card-emg-gradient: linear-gradient(to bottom right, var(--rose-50), var(--r-50));
+    --br-b400-b600: linear-gradient(to bottom right, var(--b-400), var(--b-600));
+
+    /* shadow */
+    --main-shadow: 0 10px 15px -3px rgba(var(--v-500-rgb), 0.25), 0 4px 6px -4px rgba(var(--v-500-rgb), 0.25);
+    --sec-shadow: 0 10px 15px -3px rgba(var(--v-500-rgb), 0.3), 0 4px 6px -4px rgba(var(--v-500-rgb), 0.3);
+    --blue-shadow: 0 10px 15px -3px rgba(var(--b-500-rgb), 0.25), 0 4px 6px -4px rgba(var(--b-500-rgb), 0.25);
+    --orange-shadow: 0 10px 15px -3px rgba(var(--a-500-rgb), 0.25), 0 4px 6px -4px rgba(var(--a-500-rgb), 0.25);
+    --red-shadow: 0 10px 15px -3px rgba(var(--rose-500-rgb), 0.25), 0 4px 6px -4px rgba(var(--rose-500-rgb), 0.25);
+    --input-shadow: 0 0 0 2px rgba(var(--v-500-rgb), 0.2);
+    --modal-btn-shadow: 0 10px 15px -3px rgba(var(--v-500-rgb), 0.25), 0 4px 6px -4px rgba(var(--v-500-rgb), 0.25);
+    --summary-card-shadow: 0 1px 3px 0 var(--shadow-opacity), 0 1px 2px -1px var(--shadow-opacity);
+    --summary-card-hover-shadow: 0 4px 6px -1px var(--shadow-opacity), 0 2px 4px -2px var(--shadow-opacity);
+
+    /* sizes */
+    --rem-1-eighth: 0.125rem;
+    --rem-5-eighths: 0.625rem;
+    --rem-11-sixteenths: 0.6875rem;
+    --rem-3-quarters: 0.75rem;
+    --rem-7-eightths: 0.875rem;
+    --rem-1-and-quarter: 1.25rem;
+    --rem-1: 1rem;
+    --rem-1-half: 1.5rem;
+    --rem-1-and-3-quarters: 1.75rem;
+    --rem-2: 2rem;
+    --rem-2-quarter: 2.25rem;
+    --rem-2-half: 2.5rem;
+    --rem-2-3-quarters: 2.75rem;
+    --rem-3-and-half: 3.5rem;
+    --rem-5: 5rem;
+    --rem-6: 6rem;
+    --rem-7: 7rem;
+    --rem-17-and-half: 17.5rem;
+}
+
+body {
+    --bs-body-font-family: var(--main-font), sans-serif;
+    background-color: var(--main-bg);
+}
+
+.fw-medium {
+    font-family: var(--med-font), sans-serif;
+}
+
+.fw-bold {
+    font-family: var(--bold-font), sans-serif;
+}
+
+.fw-bolder {
+    font-family: var(--bolder-font), sans-serif;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.h-fit-content {
+    height: fit-content;
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+
+.top-7 {
+    top: var(--rem-7);
+}
+
+textarea {
+    resize: none;
+}
+
+/* GENERAL STYLING END */
+
+/** NAVBAR STYLING START */
+
+.brand-icon {
+    --bs-gradient: var(--br-v600-i600);
+    --bs-box-shadow: var(--main-shadow);
+    width: var(--rem-2-half);
+    height: var(--rem-2-half);
+}
+
+.brand-name h1 span {
+    color: var(--v-600);
+}
+
+.brand-name p {
+    font-size: var(--rem-3-quarters);
+}
+
+.navbar-box {
+    width: var(--rem-2-quarter);
+    height: var(--rem-2-quarter);
+}
+
+.navbar-btn {
+    font-size: var(--rem-7-eightths);
+    --bs-gradient: var(--br-v600-i600);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.navbar-btn:hover {
+    transform: translateY(calc(var(--rem-1-eighth)*-1));
+    box-shadow: var(--sec-shadow);
+}
+
+.nav-icon,
+.nav-icon i {
+    transition: all 0.2s;
+}
+
+.nav-icon:hover {
+    --bs-white-rgb: var(--g-100-rgb);
+}
+
+.nav-icon:hover i {
+    --bs-text-opacity: 0.75;
+}
+
+/* NAVBAR STYLING END */
+
+/** SUMMARY CARDS STYLING START */
+
+.summary-card>div {
+    box-shadow: var(--summary-card-shadow);
+    transition: all 0.2s;
+}
+
+.summary-card>div:hover {
+    box-shadow: var(--summary-card-hover-shadow);
+}
+
+.summary-card .icon-bg {
+    width: var(--rem-2-3-quarters);
+    height: var(--rem-2-3-quarters);
+}
+
+.summary-card div:last-child p:first-child {
+    font-size: var(--rem-11-sixteenths);
+}
+
+.summary-card:first-child .icon-bg {
+    --bs-gradient: var(--br-b500-b600);
+    --bs-box-shadow: var(--blue-shadow);
+}
+
+.summary-card:nth-child(2) .icon-bg,
+.yellow-icon {
+    --bs-gradient: var(--br-a400-o500);
+    --bs-box-shadow: var(--orange-shadow);
+}
+
+.summary-card:last-child .icon-bg,
+.red-icon {
+    --bs-gradient: var(--br-rose500-r600);
+    --bs-box-shadow: var(--red-shadow);
+}
+
+.small-icon{
+    width: var(--rem-2-half);
+    height: var(--rem-2-half);
+}
+
+.summary-card-icon{
+    width: var(--rem-1-half);
+    height: var(--rem-1-half);
+}
+
+.fav-card-hov,
+.emg-card-hov{
+    transition: all 0.2s;
+}
+
+.fav-card-hov:hover{
+    background-color: var(--a-50);
+    cursor: pointer;
+    --bs-dark-rgb: var(--a-200-rgb);
+    --bs-border-opacity: 1;
+}
+
+.emg-card-hov:hover{
+    background-color: var(--rose-50);
+    cursor: pointer;
+    --bs-dark-rgb: var(--rose-200-rgb);
+    --bs-border-opacity: 1;
+}
+
+.f-12{
+    font-size: var(--rem-3-quarters);
+}
+
+/* SUMMARY CARDS STYLING END */
+
+/** ALL CONTACTS START */
+
+.header-desc,
+.search-input,
+.f-14 {
+    font-size: var(--rem-7-eightths);
+}
+
+.search-input {
+    padding: 14px;
+}
+
+.search-input.form-control:focus {
+    border-color: var(--v-500);
+    box-shadow: var(--input-shadow);
+}
+
+.search-input::placeholder {
+    opacity: 0.7;
+}
+
+.no-contact-icon {
+    width: var(--rem-5);
+    height: var(--rem-5);
+    background-color: var(--g-100);
+}
+
+.yellow-icon,
+.red-icon {
+    width: var(--rem-2);
+    height: var(--rem-2);
+}
+
+.quick-access-body{
+    max-height: var(--rem-17-and-half);
+}
+
+.quick-access-card:first-child>div:first-child {
+    --bs-gradient: var(--qucik-card-fav-gradient);
+}
+
+.quick-access-card:last-child>div:first-child {
+    --bs-gradient: var(--qucik-card-emg-gradient);
+}
+
+.quick-access-card div:first-child div:last-child p:first-child {
+    font-size: var(--rem-7-eightths);
+}
+
+.quick-access-card div:first-child div:last-child p:last-child {
+    font-size: var(--rem-5-eighths);
+}
+
+/* ALL CONTACTS END */
+
+/** MODAL STYLING START */
+
+.modal-body{
+    scrollbar-width: none;
+}
+
+.modal-close {
+    width: var(--rem-2);
+    height: var(--rem-2);
+}
+
+.close-btn .modal-close,
+.close-btn .modal-close i {
+    transition: all 0.2s;
+}
+
+.close-btn:hover .modal-close {
+    background-color: var(--g-100);
+}
+
+.close-btn:hover .modal-close i {
+    --bs-text-opacity: 0.75;
+}
+
+.profile-img-container {
+    width: var(--rem-6);
+    height: var(--rem-6);
+    --bs-gradient: var(--br-b400-b600);
+}
+
+.img-btn-container {
+    background-color: var(--g-100);
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.img-btn-container:hover {
+    background-color: var(--g-200);
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+    padding-block: var(--rem-3-quarters);
+    background-color: var(--g-50);
+}
+
+.modal-form input.form-control:focus,
+.modal-form textarea.form-control:focus,
+.modal-form select.form-select:focus {
+    border-color: var(--v-500);
+    box-shadow: 0 0 0 2px rgba(var(--v-500-rgb), .2);
+}
+
+.form-check label,
+.form-check input{
+    cursor: pointer;
+}
+
+.form-check-input{
+    width: var(--rem-1-and-quarter);
+    height: var(--rem-1-and-quarter);
+}
+
+.form-check-input:focus{
+    box-shadow: none;
+}
+
+.submit-btn{
+    --bs-gradient: var(--r-v600-i600);
+    transition: box-shadow 0.2s;
+    padding-block: var(--rem-3-quarters);
+}
+
+.submit-btn:hover{
+    box-shadow: var(--modal-btn-shadow);
+}
+
+.close-button{
+    padding-block: var(--rem-3-quarters);
+    background-color: var(--g-100);
+    transition: background-color 0.2s;
+}
+
+.close-button:hover{
+    background-color: var(--g-200);
+}
+
+/* MODAL STYLING END */
+
+/** CONTACT CARD STYLING START */
+
+.contact-img{
+    width: var(--rem-3-and-half);
+    height: var(--rem-3-and-half);
+}
+
+.blue-icon{
+    background-image: var(--br-c500-b600);
+}
+
+.contact-cat-icon{
+    width: var(--rem-1-and-quarter);
+    height: var(--rem-1-and-quarter);
+    font-size: 7px;
+}
+
+.top-right{
+    top: calc(var(--rem-1-eighth)*-1);
+    right: calc(var(--rem-1-eighth)*-1);
+}
+
+.bottom-right{
+    bottom: calc(var(--rem-1-eighth)*-1);
+    right: calc(var(--rem-1-eighth)*-1);
+}
+
+.phone-icon{
+    width: var(--rem-1-half);
+    height: var(--rem-1-half);
+}
+
+.mail-icon,
+.address-icon{
+    width: var(--rem-1-and-3-quarters);
+    height: var(--rem-1-and-3-quarters);
+}
+
+.mail-icon{
+    background-color: var(--v-100);
+    color: var(--v-600);
+}
+
+.contact-cat{
+    font-size: var(--rem-11-sixteenths);
+}
+
+.address-icon,
+.friends,
+.green-icon{
+    background-color: var(--e-100);
+    color: var(--e-600);
+}
+
+.family{
+    background-color: var(--b-100);
+    color: var(--b-700);
+}
+
+.work{
+    background-color: var(--p-100);
+    color: var(--p-700);
+}
+
+.school{
+    background-color: var(--a-100);
+    color: var(--a-700);
+}
+
+.other{
+    background-color: var(--g-100);
+    color: var(--g-700);
+}
+
+.emergency{
+    background-color: var(--rose-50);
+    color: var(--rose-600);
+}
+
+.red-icon{
+    background-color: var(--rose-100);
+    color: var(--rose-600);
+}
+
+.card-footer{
+    background-color: rgba(var(--g-50-rgb), 0.8);
+}
+
+.footer-icon{
+    width: var(--rem-2-quarter);
+    height: var(--rem-2-quarter);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.footer-phone-icon{
+    background-color: var(--e-50);
+    color: var(--e-600);
+}
+
+.footer-phone-icon:hover{
+    background-color: var(--e-100);
+}
+
+.footer-mail-icon{
+    background-color: var(--v-50);
+    color: var(--v-600);
+}
+
+.footer-mail-icon:hover{
+    background-color: var(--v-100);
+}
+
+.footer-fav-icon,
+.footer-emg-icon{
+    color: var(--g-400);
+}
+
+.footer-fav-icon:hover,
+.footer-emg-icon:hover{
+    background-color: var(--g-100);
+}
+
+.footer-fav-icon:hover{
+    color: var(--a-400);
+}
+
+.footer-emg-icon:hover{
+    color: var(--rose-500);
+}
+
+.footer-fav-icon.active{
+    background-color: var(--a-50);
+    color: var(--a-400);
+}
+
+.footer-fav-icon.active:hover{
+    background-color: var(--a-100);
+}
+
+.footer-emg-icon.active{
+    background-color: var(--rose-50);
+    color: var(--rose-500);
+}
+
+.footer-emg-icon.active:hover{
+    background-color: var(--rose-100);
+}
+
+.footer-edit-icon,
+.footer-delete-icon{
+    color: var(--g-500);
+    background-color: var(--g-50);
+}
+
+.footer-edit-icon:hover{
+    background-color: var(--i-50);
+    color: var(--i-600);
+}
+
+.footer-delete-icon:hover{
+    background-color: var(--rose-50);
+    color: var(--rose-600);
+}
+
+/* CONTACT CARD STYLING END */
+
+
+@media (min-width: 1200px) {
+    .w-xl-75 {
+        width: 75%;
+    }
+
+    .w-xl-25 {
+        width: 25%;
+    }
+}
